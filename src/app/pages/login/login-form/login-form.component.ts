@@ -18,7 +18,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   login(): void {
-    console.log('login')
+    console.log(this.loginForm.controls['email'])
   }
 
 }
