@@ -1,8 +1,8 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <!-- https://stackoverflow.com/questions/67834802/template-error-type-abstractcontrol-is-not-assignable-to-type-formcontrol -->
   <app-input [control]="$any(loginForm).get('email')" name="E-mail"></app-input>
-  <app-input [control]="$any(loginForm).get('password')" name="Password"></app-input>
-  <button type="submit">Login</button>
+  <app-input [control]="$any(loginForm).get('password')" name="Password" type="password"></app-input>
+  <button [disabled]="loginForm.invalid" type="submit">Login</button>
 </form>
 
 <hr>

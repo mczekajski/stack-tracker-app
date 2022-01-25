@@ -1,6 +1,6 @@
 <label>
   {{ name }}
-  <input [formControl]="control" />
+  <input [formControl]="control" [type]="type" />
   <ng-container *ngIf="control.dirty && control.touched && control.errors">
     <div *ngIf="control.errors['required']">
       {{ name }} is required.
