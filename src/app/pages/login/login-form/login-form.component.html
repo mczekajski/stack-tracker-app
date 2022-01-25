@@ -1,0 +1,14 @@
+<form [formGroup]="loginForm" (submit)="login">
+  <label>
+    E-mail
+    <input formControlName="email" />
+  </label>
+  <label>
+    Password
+    <input formControlName="password" />
+  </label>
+  <button type="submit">Login</button>
+</form>
+
+<div>Form contents: {{ loginForm.value | json }}</div>
+<div>Form is valid: {{ loginForm.valid }}</div>
