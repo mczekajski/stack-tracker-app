@@ -1,5 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="toolbar" color="primary">
   <span>Stack Tracker App</span>
+  <button mat-button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

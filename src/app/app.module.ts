@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +23,7 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatListModule
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,11 +18,25 @@ interface ILoginResponse {
 export class AuthService {
   isLoading = false;
   isError = false;
-  isLoggedIn = false;
+  _isLoggedIn = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  async login(credentials: ICredentials) {
+  get isLoggedIn(): boolean {
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      this._isLoggedIn = true;
+    } else {
+      this._isLoggedIn = false;
+    }
+    return this._isLoggedIn;
+  }
+
+  set isLoggedIn(value: boolean) {
+    this._isLoggedIn = value;
+  }
+
+  public login(credentials: ICredentials) {
     this.isError = false;
     this.isLoading = true;
     return this.http
@@ -37,6 +51,12 @@ export class AuthService {
           this.isLoading = false;
         }
       )
+  }
+
+  public logout(): void {
+    localStorage.removeItem('jwt');
+    this._isLoggedIn = false;
+    this.router.navigate(['/login']);
   }
 
   private saveToken(token: string) {

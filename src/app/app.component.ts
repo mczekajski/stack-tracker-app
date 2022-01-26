@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,21 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'stack-tracker-app';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
-      this.router.navigate(['/login']);
+      if (this.authService.isLoggedIn) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.router.navigate(['/login']);
+      }
+  }
+
+  logout(): void {
+    this.authService.logout();
+  }
+
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
   }
 }
