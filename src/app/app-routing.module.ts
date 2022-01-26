@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '**', pathMatch: 'full', component: AppComponent }
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
