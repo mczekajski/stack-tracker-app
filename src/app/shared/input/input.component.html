@@ -1,18 +1,18 @@
-<label>
-  {{ name }}
-  <input [formControl]="control" [type]="type" />
-  <ng-container *ngIf="control.dirty && control.touched && control.errors">
-    <div *ngIf="control.errors['required']">
+<mat-form-field appearance="fill">
+  <mat-label>
+    {{ name }}
+  </mat-label>
+  <input matInput [formControl]="control" [type]="type" />
+    <mat-error *ngIf="control.hasError('required')">
       {{ name }} is required.
-    </div>
-    <div *ngIf="control.errors['minlength']">
-      {{ name }} must be at least {{ control.errors['minlength'].requiredLength }} characters long.
-    </div>
-    <div *ngIf="control.errors['maxlength']">
-      {{ name }} must be at most {{ control.errors['maxlength'].requiredLength }} characters long.
-    </div>
-    <div *ngIf="control.errors['email']">
+    </mat-error>
+    <mat-error *ngIf="control.hasError('minlength')">
+      {{ name }} is too short.
+    </mat-error>
+    <mat-error *ngIf="control.hasError('maxlength')">
+      {{ name }} is too long.
+    </mat-error>
+    <mat-error *ngIf="control.hasError('email')">
       {{ name }} is incorrect.
-    </div>
-  </ng-container>
-</label>
+    </mat-error>
+</mat-form-field>
