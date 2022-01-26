@@ -2,6 +2,7 @@
   <!-- https://stackoverflow.com/questions/67834802/template-error-type-abstractcontrol-is-not-assignable-to-type-formcontrol -->
   <app-input class="input" [control]="$any(loginForm).get('email')" name="E-mail"></app-input>
   <app-input class="input" [control]="$any(loginForm).get('password')" name="Password" type="password"></app-input>
+  <p class="error" *ngIf="isError">Nieprawidłowy e-mail lub hasło. Spróbuj ponownie.</p>
   <button class="submit-button" mat-raised-button color="primary" type="submit">Login</button>
 </form>
 

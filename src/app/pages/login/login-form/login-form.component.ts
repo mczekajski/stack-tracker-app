@@ -15,13 +15,15 @@ export class LoginFormComponent {
 
   constructor(private authService: AuthService) { }
 
+  public get isError(): boolean {
+    return this.authService.isError;
+  }
+
   onSubmit(): void {
     if (this.loginForm.invalid) {
       return;
     }
-
     this.authService.login(this.loginForm.value);
-
   }
 
 }

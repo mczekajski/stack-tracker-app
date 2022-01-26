@@ -1,6 +1,7 @@
 <div class="container">
 <mat-card class='login-card'>
   <h2 class="card-heading">Hello Stacker</h2>
+  <mat-spinner *ngIf="isLoading" class="loader"></mat-spinner>
   <app-login-form></app-login-form>
 </mat-card>
 </div>

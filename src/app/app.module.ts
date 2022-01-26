@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './pages/login/login.module';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginModule } from './pages/login/login.module';
     BrowserModule,
     AppRoutingModule,
     LoginModule,
+    DashboardModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,

@@ -7,11 +7,12 @@ import { InputModule } from 'src/app/shared/input/input.module';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [LoginComponent, LoginFormComponent],
   imports: [
-    CommonModule, ReactiveFormsModule, InputModule, MatButtonModule, MatCardModule
+    CommonModule, ReactiveFormsModule, InputModule, MatButtonModule, MatCardModule, MatProgressSpinnerModule
   ]
 })
 export class LoginModule { }
