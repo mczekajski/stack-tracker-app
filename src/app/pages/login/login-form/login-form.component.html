@@ -5,9 +5,3 @@
   <button [disabled]="loginForm.invalid" type="submit">Login</button>
 </form>
 
-<hr>
-
-<div>Form contents: {{ loginForm.value | json }}</div>
-<div>Form is valid: {{ loginForm.valid }}</div>
-<div>Errors around email: {{ loginForm.controls['email'].errors | json }}</div>
-<div>Errors around password: {{ loginForm.controls['password'].errors | json }}</div>
